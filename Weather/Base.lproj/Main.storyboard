@@ -18,22 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-dB-RQJ">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-Mg-Mcm">
+                                <rect key="frame" x="0.0" y="54" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-dB-RQJ">
                                 <rect key="frame" x="5" y="421" width="404" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLu-MB-krx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qLu-MB-krx">
                                 <rect key="frame" x="5" y="485" width="404" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-Mg-Mcm">
-                                <rect key="frame" x="0.0" y="54" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGH-iv-XSR">
+                                <rect key="frame" x="143" y="264" width="129" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -48,7 +51,9 @@
                             <constraint firstItem="qLu-MB-krx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bDB-0x-5dD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGi-dB-RQJ" secondAttribute="trailing" constant="5" id="bmU-1h-FSJ"/>
                             <constraint firstItem="dGi-dB-RQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cGQ-an-irS"/>
+                            <constraint firstItem="MGH-iv-XSR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ox9-ox-4jA"/>
                             <constraint firstItem="qLu-MB-krx" firstAttribute="top" secondItem="dGi-dB-RQJ" secondAttribute="bottom" constant="10" id="rF7-hI-X2M"/>
+                            <constraint firstItem="dGi-dB-RQJ" firstAttribute="top" secondItem="MGH-iv-XSR" secondAttribute="bottom" constant="29" id="roz-mI-loB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

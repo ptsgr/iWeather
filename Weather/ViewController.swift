@@ -26,19 +26,26 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         
         
         var locationName: String?
         var currentTemp: Double?
+        var errorHasOccured: Bool = false
         
-        let urlSearch =     "https://api.apixu.com/v1/current.json?key=cb09fdee98dc48b6b88201642190605&q=\(searchBar.text!)"
+        let urlSearch =     "https://api.apixu.com/v1/current.json?key=cb09fdee98dc48b6b88201642190605&q=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
         let url = URL(string: urlSearch)
+
         let task = URLSession.shared.dataTask(with: url!) {[weak self] (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
                     as! [String : AnyObject]
                 print("json init!")
                 
+                if let _ = json["error"] {
+                    errorHasOccured = true
+                    
+                }
                 
                 if let location = json["location"] {
                     locationName = location["name"] as? String
@@ -52,19 +59,26 @@ extension ViewController: UISearchBarDelegate {
                     
                 }
                 DispatchQueue.main.async {
-                    self?.cityLabel.text = locationName
-                    self?.tempLabel.text = "\(currentTemp!)"
+                    if errorHasOccured {
+                        self?.cityLabel.text = "The request failed"
+                        self?.tempLabel.isHidden = true
+                        
+                    } else {
+                        self?.cityLabel.text = locationName
+                        self?.tempLabel.text = "\(currentTemp!)"
+                        self?.tempLabel.isHidden = false
+                        self?.searchBar.text = ""
+                        
+                        
+                    }
+
                 }
                 
             } catch let jsonError {
-                print("kek")
                 print(jsonError)
             }
         }
         task.resume()
-        
-        
-     /*   */
         
     }
 }
