@@ -113,7 +113,7 @@ extension ViewController: UISearchBarDelegate {
                 
                 if let imageAPIcurrent = json["current"]{
                     if let imageAPI = imageAPIcurrent["condition"] as? [String : AnyObject]{
-                        urlForImage  = "https:\(imageAPI["icon"] as? String ?? "//avtodok02.ru/wp-content/uploads/2018/09/01-Location.png")"
+                        urlForImage  = "https:\(imageAPI["icon"] as? String ?? "//lh3.googleusercontent.com/lWuxzuZml5BM8LiHiNkWTqC91n0IxxSnZ2j-_OTGjOnz1vqidMNilL_H0HnH8fQj7uM")"
                         let urlImage = URL(string: urlForImage!)
                         dataImage = try? Data(contentsOf: urlImage!)
                     }
@@ -124,6 +124,9 @@ extension ViewController: UISearchBarDelegate {
                 }
                 DispatchQueue.main.async {
                     if errorHasOccured {
+                        let urlErrorImage = URL(string: "https://lh3.googleusercontent.com/lWuxzuZml5BM8LiHiNkWTqC91n0IxxSnZ2j-_OTGjOnz1vqidMNilL_H0HnH8fQj7uM")
+                        dataImage = try? Data(contentsOf: urlErrorImage!)
+                        self?.weatherImage.image = UIImage(data: dataImage!)
                         self?.cityLabel.text = "The request failed"
                         self?.tempLabel.isHidden = true
                         
