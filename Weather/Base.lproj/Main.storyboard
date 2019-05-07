@@ -18,28 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-Mg-Mcm">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="JPA-Mg-Mcm">
                                 <rect key="frame" x="0.0" y="54" width="414" height="56"/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-dB-RQJ">
                                 <rect key="frame" x="5" y="421" width="404" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qLu-MB-krx">
                                 <rect key="frame" x="5" y="485" width="404" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-sg-rMX">
+                                <rect key="frame" x="355" y="110" width="51" height="31"/>
+                                <connections>
+                                    <action selector="SwitchOn:" destination="BYZ-38-t0r" eventType="valueChanged" id="CMz-Qp-zDh"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change mod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3li-AO-Id0">
+                                <rect key="frame" x="224.5" y="110" width="122.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1b-CC-zYK">
+                                <rect key="frame" x="143" y="213" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dGi-dB-RQJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0xT-cU-mvl"/>
+                            <constraint firstItem="3li-AO-Id0" firstAttribute="top" secondItem="JPA-Mg-Mcm" secondAttribute="bottom" id="1o1-iZ-Uo3"/>
                             <constraint firstItem="JPA-Mg-Mcm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3M2-0j-e7K"/>
                             <constraint firstAttribute="trailing" secondItem="JPA-Mg-Mcm" secondAttribute="trailing" id="CTq-Ys-rJB"/>
+                            <constraint firstItem="fGf-sg-rMX" firstAttribute="leading" secondItem="3li-AO-Id0" secondAttribute="trailing" constant="8" id="EQW-Gk-XZg"/>
                             <constraint firstItem="JPA-Mg-Mcm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EzK-4K-zJr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qLu-MB-krx" secondAttribute="trailing" constant="5" id="PJA-nV-eGk"/>
                             <constraint firstItem="qLu-MB-krx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="U4u-Df-YIO"/>
@@ -48,14 +67,20 @@
                             <constraint firstItem="qLu-MB-krx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bDB-0x-5dD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGi-dB-RQJ" secondAttribute="trailing" constant="5" id="bmU-1h-FSJ"/>
                             <constraint firstItem="dGi-dB-RQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cGQ-an-irS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fGf-sg-rMX" secondAttribute="trailing" constant="10" id="dSk-ed-aDF"/>
                             <constraint firstItem="qLu-MB-krx" firstAttribute="top" secondItem="dGi-dB-RQJ" secondAttribute="bottom" constant="10" id="rF7-hI-X2M"/>
+                            <constraint firstItem="fGf-sg-rMX" firstAttribute="top" secondItem="JPA-Mg-Mcm" secondAttribute="bottom" id="ugT-So-JeK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="SwitchMod" destination="fGf-sg-rMX" id="Ih3-EX-IP4"/>
                         <outlet property="cityLabel" destination="dGi-dB-RQJ" id="vsV-pu-3oX"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="jTv-7P-EM6"/>
                         <outlet property="searchBar" destination="JPA-Mg-Mcm" id="bfO-lU-8vj"/>
+                        <outlet property="switchLabel" destination="3li-AO-Id0" id="w9F-eb-cXU"/>
                         <outlet property="tempLabel" destination="qLu-MB-krx" id="eOR-Be-Z3w"/>
+                        <outlet property="weatherImage" destination="p1b-CC-zYK" id="s8a-r5-cgI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
