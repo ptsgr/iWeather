@@ -34,9 +34,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGH-iv-XSR">
-                                <rect key="frame" x="143" y="264" width="129" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -51,9 +48,7 @@
                             <constraint firstItem="qLu-MB-krx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bDB-0x-5dD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGi-dB-RQJ" secondAttribute="trailing" constant="5" id="bmU-1h-FSJ"/>
                             <constraint firstItem="dGi-dB-RQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cGQ-an-irS"/>
-                            <constraint firstItem="MGH-iv-XSR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ox9-ox-4jA"/>
                             <constraint firstItem="qLu-MB-krx" firstAttribute="top" secondItem="dGi-dB-RQJ" secondAttribute="bottom" constant="10" id="rF7-hI-X2M"/>
-                            <constraint firstItem="dGi-dB-RQJ" firstAttribute="top" secondItem="MGH-iv-XSR" secondAttribute="bottom" constant="29" id="roz-mI-loB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

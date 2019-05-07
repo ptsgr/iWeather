@@ -34,7 +34,7 @@ extension ViewController: UISearchBarDelegate {
         var errorHasOccured: Bool = false
         
         let urlSearch =     "https://api.apixu.com/v1/current.json?key=cb09fdee98dc48b6b88201642190605&q=\(searchBar.text!.replacingOccurrences(of: " ", with: "%20"))"
-        let url = URL(string: urlSearch)
+            let url = URL(string: urlSearch)
 
         let task = URLSession.shared.dataTask(with: url!) {[weak self] (data, response, error) in
             do {
